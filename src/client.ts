@@ -92,7 +92,7 @@ export class FarosClient {
       const {data} = await this.api.get('/users/me');
       return data.tenantId;
     } catch (err: any) {
-      throw wrapApiError(err, 'unable to get tenant');
+      throw wrapApiError(err, `unable to get tenant: ${this.tenant}`);
     }
   }
 
